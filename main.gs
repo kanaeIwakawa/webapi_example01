@@ -4,7 +4,7 @@ function doGet(e) {
     //リクエストパラメータ名"text"の値を取得する
     const text = e.parameter.text;
 
-    const value;
+    let value;
 
     if (text) {
         value = "You say " + text;
@@ -16,7 +16,7 @@ function doGet(e) {
         message: value
     }
 
-    const responseText;
+    let responseText;
 
     const out = ContentService.createTextOutput();
 
@@ -41,7 +41,7 @@ function doGet(e) {
 }
 
 function testLogic() {
-    var e = {
+    let e = {
         "parameter": {
             "text": "hello",
             "callback": "myCallbackFunc"
@@ -57,7 +57,7 @@ function testGet() {
     const url = ScriptApp.getService().getUrl() + "?text=Hello&callback=myFunc001";
     Logger.log("url=" + url);
 
-    const options = {
+    let options = {
         "method": "GET",
         "followRedirects": true,
     };
