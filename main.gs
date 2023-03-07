@@ -2,9 +2,9 @@
 function doGet(e) {
 
     //リクエストパラメータ名"text"の値を取得する
-    var text = e.parameter.text;
+    const text = e.parameter.text;
 
-    var value;
+    const value;
 
     if (text) {
         value = "You say " + text;
@@ -12,15 +12,15 @@ function doGet(e) {
         value = "Please say something!";
     }
 
-    var result = {
+    const result = {
         message: value
     }
 
-    var responseText;
+    const responseText;
 
-    var out = ContentService.createTextOutput();
+    const out = ContentService.createTextOutput();
 
-    var callback = e.parameter.callback;
+    const callback = e.parameter.callback;
 
     if (callback) {
         responseText = callback + "(" + JSON.stringify(result) + ")";
@@ -47,21 +47,21 @@ function testLogic() {
             "callback": "myCallbackFunc"
         }
     };
-    var out = doGet(e);
-    var content = out.getContent();
+    const out = doGet(e);
+    const content = out.getContent();
     Logger.log("content=" + content);
 }
 
 function testGet() {
 
-    var url = ScriptApp.getService().getUrl() + "?text=Hello&callback=myFunc001";
+    const url = ScriptApp.getService().getUrl() + "?text=Hello&callback=myFunc001";
     Logger.log("url=" + url);
 
-    var options = {
+    const options = {
         "method": "GET",
         "followRedirects": true,
     };
 
-    var response = UrlFetchApp.fetch(url, options);
+    const response = UrlFetchApp.fetch(url, options);
     Logger.log("response=" + response);
 }
