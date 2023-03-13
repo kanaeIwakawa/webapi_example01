@@ -46,6 +46,8 @@ function doGet(e) {
     //JSONPテキストをセットする
     out.setContent(responseText);
 
+    PropertiesService.getScriptProperties().setProperty("key","value");
+
     return out;
 }
 　 //結末
