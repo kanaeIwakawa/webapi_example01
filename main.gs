@@ -47,6 +47,7 @@ function doGet(e) {
     out.setContent(responseText);
 
     PropertiesService.getScriptProperties().setProperty("incomingURL","https://script.google.com/a/macros/devenus.com/s/AKfycbzG03rH6AUG3vHmQF-avImHfRgvzxNw6vbEXtEmFD0ZoH0LNKy4E_SgsRECDkIgoZzhKw/exec")
+    PropertiesService.getScriptProperties().getProperty("incomingURL")
 
     return out;
 }
