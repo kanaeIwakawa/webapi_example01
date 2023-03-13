@@ -46,7 +46,7 @@ function doGet(e) {
     //JSONPテキストをセットする
     out.setContent(responseText);
 
-    PropertiesService.getScriptProperties().setProperty("key","value");
+    PropertiesService.getScriptProperties().setProperty("incomingURL","https://script.google.com/a/macros/devenus.com/s/AKfycbzG03rH6AUG3vHmQF-avImHfRgvzxNw6vbEXtEmFD0ZoH0LNKy4E_SgsRECDkIgoZzhKw/exec")
 
     return out;
 }
